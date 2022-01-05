@@ -28,6 +28,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -92,6 +93,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -123,6 +125,11 @@
           }
         }
       }
-    }},
-  "defaultProject": "price-list-task"
+    }
+  },
+  "defaultProject": "price-list-task",
+  "cli": {
+    "analytics": "ff1c92be-60f1-4438-88bb-7972d226c2f5",
+    "defaultCollection": "@ngrx/schematics"
+  }
 }

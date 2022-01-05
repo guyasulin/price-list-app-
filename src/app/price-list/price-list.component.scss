@@ -1,0 +1,21 @@
+.container {
+    display: flex;
+    .price-list {
+        flex: 1;
+        .table {
+            width: 85%;
+            .element-row:hover {
+                cursor: pointer;
+                background: #efefef;
+            }
+        }
+    }
+
+    .error {
+        flex: 1;
+    }
+
+    .details-edit {
+        flex: 1;
+    }
+}

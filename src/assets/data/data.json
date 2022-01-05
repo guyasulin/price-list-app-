@@ -1,0 +1,37 @@
+[
+    {
+        "priceListID": 1,
+        "priceListName":"price Name one",
+        "extErpPriceListID": 555
+    },
+    {
+        "priceListID": 12,
+        "priceListName":"price Name",
+        "extErpPriceListID": 555
+    },
+    {
+        "priceListID": 2,
+        "priceListName":"price Name",
+        "extErpPriceListID": 666
+    },
+    {
+        "priceListID": 3,
+        "priceListName":"price Name",
+        "extErpPriceListID": 777
+    },
+    {
+        "priceListID": 4,
+        "priceListName":"price Name",
+        "extErpPriceListID": 888
+    },
+    {
+        "priceListID": 5,
+        "priceListName":"price Name",
+        "extErpPriceListID": 999
+    },
+    {
+        "priceListID": 6,
+        "priceListName":"price Name",
+        "extErpPriceListID": 2525
+    }
+]

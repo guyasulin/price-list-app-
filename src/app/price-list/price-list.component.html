@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="price-list" *ngIf="!errorMessage">
+    <table mat-table [dataSource]="priceList" class="table">
+
+      <ng-container matColumnDef="priceListName">
+        <th mat-header-cell *matHeaderCellDef>Price List Name</th>
+        <td mat-cell *matCellDef="let element">{{ element.priceListName }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="extErpPriceListID">
+        <th mat-header-cell *matHeaderCellDef>ExtErp PriceList ID</th>
+        <td mat-cell  *matCellDef="let element">
+          {{ element.extErpPriceListID }}
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row class="element-row"  *matRowDef="let row; columns: displayedColumns" (click)="selectItem(row)"></tr>
+    </table>
+  </div>
+
+  <div class="error" *ngIf="this.priceList.length === 0">
+    {{errorMessage}}
+  </div>
+
+  <div class="details-edit">
+    <app-details-edit
+      [item]="item"
+      (edit)="editItem($event)"
+    ></app-details-edit>
+  </div>
+</div>

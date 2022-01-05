@@ -1,0 +1,52 @@
+<div class="details-edit">
+    <form #form="ngForm" >
+
+        <mat-form-field appearance="fill" >
+            <mat-label>price List Name</mat-label>
+            <input matInput 
+            required 
+            name="priceListName" 
+            #priceListName="ngModel" 
+            appInputValidator
+            minlength="10"
+            [ngModel]="item?.priceListName">
+          </mat-form-field>
+          
+          <div *ngIf="priceListName.touched">
+            <p *ngIf="priceListName.errors?.required">price List Name is a required!</p>
+            <p *ngIf="priceListName.errors?.input == true">Invalid digits or characters</p>
+            <p *ngIf="priceListName.errors?.minlength">Price List Name must be at least 10 characters
+            </p>
+          </div>
+
+          <mat-form-field appearance="fill">
+            <mat-label>price List ID</mat-label>
+            <input matInput disabled  
+            name="priceListID" 
+            #priceListID="ngModel" 
+            [ngModel]="item?.priceListID">
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>ext Erp Price List ID</mat-label>
+            <input matInput type="number" required 
+            name="extErpPriceListID" 
+            #extErpPriceListID="ngModel" 
+            [ngModel]="item?.extErpPriceListID" (ngModelChange)="checkValue(form)">
+          </mat-form-field>
+          
+          <div *ngIf="extErpPriceListID.touched">
+              <p *ngIf="extErpPriceListID.errors?.required">price List Name is a required!</p>
+              <p *ngIf="extErpPriceListID.errors?.input == true">Invalid digits or characters</p>
+              <p *ngIf="form.value.extErpPriceListID === globalItemCheckValue?.priceListID">
+                {{errorMessage}}
+            </p>
+            </div>
+           
+            <div>
+                <button type="button"  [disabled]="!form.valid ||
+                form.value.extErpPriceListID == globalItemCheckValue?.priceListID"
+                (click)="editForm(form)" >EDIT</button>
+            </div>
+        </form>
+</div>

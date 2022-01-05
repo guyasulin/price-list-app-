@@ -1,0 +1,17 @@
+<div class="search-page">
+
+  <form class="form" [formGroup]="searchForm">
+    <mat-form-field class="search" appearance="fill">
+      <input
+        matInput
+        type="text"
+        formControlName="search"
+        (keyup)="searchTrem.next($event)"
+      />
+    </mat-form-field>
+  </form>
+
+  <div class="price-list" *ngIf="priceList$ | async as priceList">
+    <app-price-list [priceList]="priceList"></app-price-list>
+  </div>
+</div>
